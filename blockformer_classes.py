@@ -1,7 +1,6 @@
 import pygame
 
-def flip_y(y, surface):
-    return surface.get_rect().bottom - y
+#HELLO EVERYONE
 
 class Window:
     def __init__(self,width=700,height=500,screen_width=700,screen_height=500,frames_per_second=60,title="my game"):

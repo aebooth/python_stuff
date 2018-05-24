@@ -1,7 +1,5 @@
 import pygame
 
-#HELLO EVERYONE
-
 class Window:
     def __init__(self,width=700,height=500,screen_width=700,screen_height=500,frames_per_second=60,title="my game"):
         self.screen = pygame.display.set_mode((screen_width,screen_height))
@@ -14,7 +12,6 @@ class Window:
         self.lower_bound = 0
         self.clock = pygame.time.Clock()
         self.frames_per_second = frames_per_second
-        self.landscape = {}
         self.background = pygame.sprite.Group()
         self.foreground = pygame.sprite.Group()
         self.platforms = pygame.sprite.Group()
@@ -34,13 +31,23 @@ class Window:
         self.screen.fill((255,255,255))
 
     def draw(self):
+        self.background.draw(self.screen)
+        self.platforms.draw(self.screen)
         self.sprites.draw(self.screen)
+        self.foreground.draw(self.screen)
 
     def update(self,*args):
         self.sprites.update(args)
 
     def scroll(self,dx,dy):
-        pass
+        for sprite in self.background.sprites():
+            sprite.rect.move(dx,dy)
+        for sprite in self.background.sprites():
+            sprite.rect.move(dx,dy)
+        for sprite in self.background.sprites():
+            sprite.rect.move(dx,dy)
+        for sprite in self.background.sprites():
+            sprite.rect.move(dx,dy)
 
 class Landscape(pygame.sprite.Sprite):
     def __init__(self,Window,color,x,y,width=20,height=20):

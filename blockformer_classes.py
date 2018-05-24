@@ -43,16 +43,6 @@ class Window:
     def scroll(self,dx,dy):
         pass
 
-class Platform(Landscape):
-    BOTTOM = 0
-    LEFT = 1
-    TOP = 3
-    RIGHT = 4
-    
-    def __init__(self,Window,color,x,y,width=20,height=20):
-        Landscape.__init__(self,Window,color,x,y,width,height)
-        
-
 class Landscape(pygame.sprite.Sprite):
     def __init__(self,Window,color,x,y,width=20,height=20):
         pygame.sprite.Sprite.__init__(self)
@@ -71,3 +61,19 @@ class Landscape(pygame.sprite.Sprite):
     def update(self,color):
         self.color = color
         self.image.fill(self.color)
+
+
+class Platform(Landscape):
+    BOTTOM = 0
+    LEFT = 1
+    TOP = 3
+    RIGHT = 4
+
+    def __init__(self, Window, color, x, y, width=20, height=20):
+        Landscape.__init__(self, Window, color, x, y, width, height)
+
+    def move(self,x,y):
+        self.rect.move_ip(x,y)
+
+    def get_collision_direction(self):
+        pygame.sprite.spritecollideany(self,)

@@ -19,9 +19,9 @@ class TestSmartSpriteCollisions(unittest.TestCase):
 
     def test_get_relative_position(self):
         other = bc.SmartSprite()
-        for row in range(6):
-            for col in range(6):
-                other.rect = pygame.Rect(0,0,col*5,row*5)
+        for y in range(4):
+            for x in range(4):
+                other.rect = pygame.Rect(0,0,((x+1)*5+2),((y+1)*5+2))
                 print(self.main_sprite.get_relative_position(other))
                 self.assertEqual(self.main_sprite.get_relative_position(other),(0,row*10+col),
                                  "died at width of " + str(other.rect.width) + " and a height of " + str(other.rect.height))

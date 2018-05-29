@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14d21d6f-ba91-4362-ab7b-1817d14bf3e9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/python_stuff.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python_stuff.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blockformer_classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockformer_classes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockformer_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockformer_tests.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,23 +27,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blockformer_classes.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blockformer_classes.py">
+      <file leaf-file-name="blockformer_tests.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/blockformer_tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="177" column="33" lean-forward="true" selection-start-line="177" selection-start-column="33" selection-end-line="177" selection-end-column="33" />
+            <state relative-caret-position="375">
+              <caret line="25" column="88" selection-start-line="25" selection-start-column="88" selection-end-line="25" selection-end-column="88" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blockformer_tests.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/blockformer_tests.py">
+      <file leaf-file-name="blockformer_classes.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blockformer_classes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="467">
+              <caret line="194" selection-start-line="194" selection-end-line="194" />
             </state>
           </provider>
         </entry>
@@ -160,24 +159,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_blockformer_tests_TestSmartSpriteCollisions - 2018.05.25 at 15h 04m 29s.xml">
-      <configuration name="Unittests for blockformer_tests.TestSmartSpriteCollisions" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_blockformer_tests_TestSmartSpriteCollisions - 2018.05.25 at 15h 04m 41s.xml">
-      <configuration name="Unittests for blockformer_tests.TestSmartSpriteCollisions" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_blockformer_tests_TestSmartSpriteCollisions - 2018.05.25 at 15h 04m 48s.xml">
-      <configuration name="Unittests for blockformer_tests.TestSmartSpriteCollisions" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_blockformer_tests_TestSmartSpriteCollisions_test_get_relative_position - 2018.05.25 at 15h 22m 17s.xml">
-      <configuration name="Unittests for blockformer_tests.TestSmartSpriteCollisions.test_get_relative_position" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_blockformer_tests_TestSmartSpriteCollisions_test_get_relative_position - 2018.05.25 at 15h 25m 12s.xml">
-      <configuration name="Unittests for blockformer_tests.TestSmartSpriteCollisions.test_get_relative_position" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_blockformer_tests_TestSmartSpriteCollisions_test_get_relative_position - 2018.05.25 at 15h 25m 32s.xml">
-      <configuration name="Unittests for blockformer_tests.TestSmartSpriteCollisions.test_get_relative_position" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_for_blockformer_tests_TestSmartSpriteCollisions_test_get_relative_position - 2018.05.25 at 15h 30m 06s.xml">
       <configuration name="Unittests for blockformer_tests.TestSmartSpriteCollisions.test_get_relative_position" configurationId="tests" />
     </history-entry>
@@ -190,28 +171,46 @@
     <history-entry file="Unittests_for_blockformer_tests_TestSmartSpriteCollisions_test_get_relative_position - 2018.05.25 at 15h 32m 50s.xml">
       <configuration name="Unittests for blockformer_tests.TestSmartSpriteCollisions.test_get_relative_position" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_for_blockformer_tests_TestSmartSpriteCollisions_test_get_relative_position - 2018.05.29 at 01h 33m 58s.xml">
+      <configuration name="Unittests for blockformer_tests.TestSmartSpriteCollisions.test_get_relative_position" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_blockformer_tests_TestSmartSpriteCollisions_test_get_relative_position - 2018.05.29 at 01h 35m 02s.xml">
+      <configuration name="Unittests for blockformer_tests.TestSmartSpriteCollisions.test_get_relative_position" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_blockformer_tests_TestSmartSpriteCollisions_test_get_relative_position - 2018.05.29 at 01h 35m 41s.xml">
+      <configuration name="Unittests for blockformer_tests.TestSmartSpriteCollisions.test_get_relative_position" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_blockformer_tests_TestSmartSpriteCollisions_test_get_relative_position - 2018.05.29 at 01h 36m 33s.xml">
+      <configuration name="Unittests for blockformer_tests.TestSmartSpriteCollisions.test_get_relative_position" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_blockformer_tests_TestSmartSpriteCollisions_test_get_relative_position - 2018.05.29 at 01h 38m 38s.xml">
+      <configuration name="Unittests for blockformer_tests.TestSmartSpriteCollisions.test_get_relative_position" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_blockformer_tests_TestSmartSpriteCollisions_test_get_relative_position - 2018.05.29 at 01h 39m 04s.xml">
+      <configuration name="Unittests for blockformer_tests.TestSmartSpriteCollisions.test_get_relative_position" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="1024" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="R Packages" />
-      <window_info anchor="right" id="R Graphics" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32991803" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32969698" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="R Graphics" order="3" />
+      <window_info anchor="right" id="R Packages" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
@@ -220,6 +219,22 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/blockformer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blockformer_classes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1290">
+          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/blockformer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -248,14 +263,14 @@
     <entry file="file://$PROJECT_DIR$/blockformer_classes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
-          <caret line="177" column="33" lean-forward="true" selection-start-line="177" selection-start-column="33" selection-end-line="177" selection-end-column="33" />
+          <caret line="194" selection-start-line="194" selection-end-line="194" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blockformer_tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        <state relative-caret-position="375">
+          <caret line="25" column="88" selection-start-line="25" selection-start-column="88" selection-end-line="25" selection-end-column="88" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

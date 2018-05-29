@@ -23,5 +23,5 @@ class TestSmartSpriteCollisions(unittest.TestCase):
             for x in range(4):
                 other.rect = pygame.Rect(0,0,((x+1)*5+2),((y+1)*5+2))
                 print(self.main_sprite.get_relative_position(other))
-                self.assertEqual(self.main_sprite.get_relative_position(other),(0,row*10+col),
+                self.assertEqual(self.main_sprite.get_relative_position(other),(0,y*10+x),
                                  "died at width of " + str(other.rect.width) + " and a height of " + str(other.rect.height))

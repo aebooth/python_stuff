@@ -2,6 +2,7 @@ import pygame
 
 class Window:
     def __init__(self,width=700,height=500,screen_width=700,screen_height=500,frames_per_second=60,title="my game"):
+        pygame.init()
         self.screen = pygame.display.set_mode((screen_width,screen_height))
         pygame.display.set_caption(title)
         self.width = width
@@ -45,6 +46,25 @@ class Window:
             sprite.update(args)
         for sprite in self.foreground:
             sprite.update(args)
+
+    def run(self,*args):
+        running = True
+        while (running):
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+
+            # Do variable changing here
+            self.update()
+            # Do screen clearing here
+            self.clear()
+
+            # Do drawing here
+            self.draw()
+
+            # Finish up frame
+            self.advance_frame()
+        pygame.quit()
 
 
 class SmartSprite(pygame.sprite.Sprite):
@@ -223,6 +243,8 @@ class Platform(SmartSprite):
             if position[1] == 11 or position[1] == 12:
                 vector = self.get_vector_to(collider)
                 self.exert_force_on(collider,(0,collider.mass*vector[1]))
+
+
 
 if __name__ == '__main__':
     pass

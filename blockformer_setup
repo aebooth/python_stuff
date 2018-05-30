@@ -1,0 +1,14 @@
+import pygame
+import blockformer_core as bc
+
+class Character(bc.SmartSprite):
+    def __init__(self,w):
+        pass
+
+
+
+
+
+
+if __name__ == '__main__':
+    pass

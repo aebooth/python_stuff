@@ -37,72 +37,72 @@ class Window:
         self.foreground.draw(self.screen)
 
     def update(self,*args):
-        self.sprites.update(args)
-
-    def scroll(self,dx,dy):
-        for sprite in self.background.sprites():
-            sprite.rect.move(dx,dy)
-        for sprite in self.background.sprites():
-            sprite.rect.move(dx,dy)
-        for sprite in self.background.sprites():
-            sprite.rect.move(dx,dy)
-        for sprite in self.background.sprites():
-            sprite.rect.move(dx,dy)
-
-class Landscape(pygame.sprite.Sprite):
-    def __init__(self,Window,color,x,y,width=20,height=20):
-        pygame.sprite.Sprite.__init__(self)
-        self.window = Window
-        self.color = color
-        self.x = x
-        self.y = y
-        self.width = width
-        self.height = height
-
-        #Docs say we need image and rect in order to be visible and collide
-        self.image = pygame.Surface([width,height])
-        self.image.fill(self.color)
-        self.rect = self.image.get_rect().move(self.window.get_screen_x(x),self.window.get_screen_y(y)-self.height)
-
-    def update(self,color):
-        self.color = color
-        self.image.fill(self.color)
-
-
-class Platform(Landscape):
-
-
-    def __init__(self, Window, color, x, y, width=20, height=20):
-        Landscape.__init__(self, Window, color, x, y, width, height)
-
-    def move(self,x,y):
-        self.rect.move_ip(x,y)
-
-    def get_collision_direction(self):
-        pygame.sprite.spritecollideany(self,)
+        for sprite in self.background:
+            sprite.update(args)
+        for sprite in self.platforms:
+            sprite.update(args)
+        for sprite in self.sprites:
+            sprite.update(args)
+        for sprite in self.foreground:
+            sprite.update(args)
 
 
 class SmartSprite(pygame.sprite.Sprite):
     N = 0
     NE = 1
-    E = 3
-    SE = 4
-    S = 5
-    SW = 6
-    W = 7
-    NW = 8
+    E = 2
+    SE = 3
+    S = 4
+    SW = 5
+    W = 6
+    NW = 7
+    ON_TOP = -1
 
-    def __init__(self):
+    def __init__(self,window,x=0,y=0,width=1,height=1,mass=1):
         pygame.sprite.Sprite.__init__(self)
-        self.sides_in_collision = []
+        self.window = window
+        self.rect = pygame.Rect(x,y,width,height)
+        self.vx = 0
+        self.vy = 0
+        self.mass = mass
+        self.drawable_sprite = pygame.sprite.Sprite()
+        self.drawable_sprite.rect = pygame.Rect(self.window.get_screen_x(self.rect.x),
+                                                self.window.get_screen_y(self.rect.y)-self.rect.height,
+                                                self.rect.width,
+                                                self.rect.height)
+        self.drawable_sprite.image = pygame.Surface((width,height))
+        self.drawable_sprite.image.fill((0,0,0))
 
-    def collide(self,others):
+    def update(self, *args):
+        self.rect.move_ip(self.vx,self.vy)
+        self.drawable_sprite.rect.move_ip(self.vx,self.vy)
+
+    def exert_force_on(self,other,force):
+        other.vx = other.vx + int(force[0]/other.mass)
+        other.vy = other.vy + int(force[1] / other.mass)
+
+    def get_collide_vectors(self,others):
+        collider_vectors = []
+        collisions = pygame.sprite.spritecollide(self, others, False)
+        for i in range(len(collisions)):
+            collider_vectors[i] = self.get_vector_to(others[i])
+        return collider_vectors
+
+    def get_collide_directions(self,others):
         collider_directions = []
-        self.sides_in_collision.clear()
         collisions = pygame.sprite.spritecollide(self,others,False)
         for i in range(len(collisions)):
             collider_directions[i] = self.get_direction_to(others[i])
         return collider_directions
+
+    def get_collide_positions(self,others):
+        collider_positions = []
+        collisions = pygame.sprite.spritecollide(self, others, False)
+        for i in range(len(collisions)):
+            collider_positions[i] = self.get_relative_position(others[i])
+        return collider_positions
+
+
 
     """
     Returns a tuple with the following make-up (top left corner code , bottom right corner code)
@@ -192,3 +192,37 @@ class SmartSprite(pygame.sprite.Sprite):
             return SmartSprite.E
         else:
             return -1
+
+    def get_vector_to(self,other):
+        return (other.rect.centerx - self.rect.centerx, other.rect.centery - self.rect.centery)
+
+
+class Landscape(SmartSprite):
+    def __init__(self,window,color,x,y,width=20,height=20):
+        SmartSprite.__init__(self,window,x,y,width,height)
+        self.color = color
+        self.drawable_sprite.image.fill(self.color)
+
+    def update(self,color):
+        self.color = color
+        self.image.fill(self.color)
+
+
+class Platform(SmartSprite):
+    def __init__(self, window, color, x, y, width=20, height=20):
+       SmartSprite.__init__(self, x, y, width, height,1000000000)
+       self.window = window
+       self.color = color
+       self.image = pygame.Surface([width, height])
+       self.image.fill(self.color)
+
+    def hold_up_stuff(self,sprites):
+        colliders = pygame.sprite.spritecollide(self,sprites)
+        for collider in colliders:
+            position = self.get_relative_position(collider)
+            if position[1] == 11 or position[1] == 12:
+                vector = self.get_vector_to(collider)
+                self.exert_force_on(collider,(0,collider.mass*vector[1]))
+
+if __name__ == '__main__':
+    pass
